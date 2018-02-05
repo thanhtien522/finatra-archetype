@@ -6,6 +6,6 @@
 
     <groupId>scala</groupId>
     <artifactId>finatra-archetype</artifactId>
-    <version>1.0</version>
+    <version>18.1.0</version>
     <packaging>jar</packaging>
 </project>

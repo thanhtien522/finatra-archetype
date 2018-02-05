@@ -1,17 +1,37 @@
 package ${package}.util
 
+
 import java.io.{File, PrintStream}
 
 import com.typesafe.config._
 
 import scala.collection.JavaConversions._
+import scala.concurrent.duration.TimeUnit
 
 /**
   * Created by SangDang on 9/15/16.
   */
 object ZConfig {
-  val env = System.getProperty("mode", "development")
-  val config = ConfigFactory.load().withFallback(ConfigFactory.parseFile(new File("conf/" + env + ".conf")))
+
+  private final val APP_MODE_VAR_NAME = "mode"
+
+  private val modeFromProp = System.getProperty(APP_MODE_VAR_NAME)
+  private val modeFromEnv = System.getenv(APP_MODE_VAR_NAME)
+
+  val mode: String = Option(modeFromProp).orElse(Option(modeFromEnv))
+    .getOrElse("development")
+
+  private lazy val configFile = {
+    println(s"Loading app mode:\n" +
+      s" - From properties: $modeFromProp\n" +
+      s" - From ENV: $modeFromEnv\n" +
+      s"Use mode: $mode")
+    s"conf/$mode.conf"
+  }
+
+  val config = ConfigFactory.load().withFallback(ConfigFactory.parseFile(new File(configFile)))
+
+  def getConf(s: String): Config = config.getConfig(s)
 
   def getInt(s: String): Int = config.getInt(s)
 
@@ -48,6 +68,8 @@ object ZConfig {
   def getString(s: String): String = config.getString(s)
 
   def getString(s: String, default: String): String = if (hasPath(s)) getString(s) else default
+
+  def getDuration(s: String, unit: TimeUnit): Long = config.getDuration(s, unit)
 
   def getStringList(s: String): List[String] = config.getStringList(s).toList
 

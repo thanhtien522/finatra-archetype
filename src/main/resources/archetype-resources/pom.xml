@@ -11,8 +11,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <encoding>UTF-8</encoding>
-        <scala.version>2.11.8</scala.version>
-        <finatra.version>2.2.0</finatra.version>
+        <scala.version>2.12.4</scala.version>
+        <finatra.version>18.1.0</finatra.version>
 
         <mainClass>${package}.MainApp</mainClass>
     </properties>
@@ -27,12 +27,12 @@
         <!-- Finatra -->
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>finatra-thrift_2.11</artifactId>
+            <artifactId>finatra-thrift_2.12</artifactId>
             <version>${finatra.version}</version>
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>finatra-http_2.11</artifactId>
+            <artifactId>finatra-http_2.12</artifactId>
             <version>${finatra.version}</version>
         </dependency>
 
@@ -46,20 +46,20 @@
         <dependency>
             <groupId>com.typesafe</groupId>
             <artifactId>config</artifactId>
-            <version>1.3.0</version>
+            <version>1.3.1</version>
         </dependency>
 
         <!-- Test Deps -->
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>finatra-thrift_2.11</artifactId>
+            <artifactId>finatra-thrift_2.12</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${finatra.version}</version>
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>finatra-thrift_2.11</artifactId>
+            <artifactId>finatra-thrift_2.12</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${finatra.version}</version>
@@ -73,42 +73,42 @@
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>finatra-http_2.11</artifactId>
+            <artifactId>finatra-http_2.12</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${finatra.version}</version>
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>finatra-jackson_2.11</artifactId>
+            <artifactId>finatra-jackson_2.12</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${finatra.version}</version>
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>inject-core_2.11</artifactId>
+            <artifactId>inject-core_2.12</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${finatra.version}</version>
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>inject-modules_2.11</artifactId>
+            <artifactId>inject-modules_2.12</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${finatra.version}</version>
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>inject-app_2.11</artifactId>
+            <artifactId>inject-app_2.12</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${finatra.version}</version>
         </dependency>
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>inject-server_2.11</artifactId>
+            <artifactId>inject-server_2.12</artifactId>
             <scope>test</scope>
             <type>test-jar</type>
             <version>${finatra.version}</version>
@@ -117,15 +117,15 @@
 
         <dependency>
             <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_2.11</artifactId>
+            <artifactId>scalatest_2.12</artifactId>
             <scope>test</scope>
-            <version>2.2.4</version>
+            <version>3.0.4</version>
         </dependency>
         <dependency>
             <groupId>org.specs2</groupId>
-            <artifactId>specs2_2.11</artifactId>
+            <artifactId>specs2_2.12</artifactId>
             <scope>test</scope>
-            <version>2.3.12</version>
+            <version>2.4.17</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.scala-lang</groupId>
@@ -250,7 +250,7 @@
             <plugin>
                 <groupId>com.twitter</groupId>
                 <artifactId>scrooge-maven-plugin</artifactId>
-                <version>4.8.0</version>
+                <version>18.1.0</version>
                 <configuration>
                     <language>scala</language>
                     <!-- default is scala, can also be java -->
