@@ -6,7 +6,6 @@ import com.twitter.util.Future
 import ${package}.domain.{UserID, UserInfo}
 import ${package}.repository.CacheRepository
 
-import scala.collection.mutable
 
 /**
   * Created by SangDang on 9/16/16.

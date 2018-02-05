@@ -2,12 +2,9 @@ package ${package}.controller.http
 
 import javax.inject.{Inject, Singleton}
 
-import com.twitter.finagle.http.{Request, Status}
 import com.twitter.finatra.http.Controller
-import com.twitter.finatra.request
 import ${package}.domain.{GetCacheRequest, PutCacheRequest, UserID}
 import ${package}.service.UserCacheService
-import com.twitter.finatra.utils.FuturePools
 
 
 /**

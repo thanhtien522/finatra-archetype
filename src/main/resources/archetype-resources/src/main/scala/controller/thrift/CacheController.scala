@@ -2,15 +2,12 @@ package ${package}.controller.thrift
 
 import javax.inject.{Inject, Singleton}
 
-import com.twitter.finagle.Service
 import com.twitter.finatra.thrift.Controller
 import com.twitter.inject.Logging
 import com.twitter.util.Future
+import ${package}.domain.ThriftImplicit.{Future2T, T2UserId, T2UserInfo}
 import ${package}.service.TUserCacheService.{AddUser, GetUser}
-import ${package}.service.TUserCacheService.AddUser.{Args, Result}
-import ${package}.service.TUserCacheService.GetUser.{Args, Result}
 import ${package}.service.{TUserCacheService, UserCacheService}
-import ${package}.domain.ThriftImplicit.{T2UserId, T2UserInfo, UserInfo2T, UserId2T,Future2T}
 
 /**
   * Created by SangDang on 9/16/16.
